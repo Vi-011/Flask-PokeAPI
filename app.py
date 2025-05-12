@@ -32,8 +32,8 @@ def index():
     return render_template("index.html", species=species)
 
 # New route: When a user clicks a Pokémon card, this page shows more details and a stats chart
-@app.route("/pokemon/<int:id>")
-def pokemon_detail(id):
+@app.route("/species/<int:id>")
+def species_detail(id):
     # Get detailed info for the Pokémon using its id
     response = requests.get(f"https://ghibliapi.vercel.app/species{id}")
     data = response.json()
@@ -46,9 +46,8 @@ def pokemon_detail(id):
     # Extract base stats for the chart (e.g., hp, attack, defense, etc.)
     stat_names = [stat['stat']['name'] for stat in data['stats']]
     stat_values = [stat['base_stat'] for stat in data['stats']]
-    
-    # Send all details to the pokemon.html template
-    return render_template("pokemon.html", pokemon={
+
+    return render_template("species.html", species={
         'name': name,
         'id': id,
         'image': image_url,
