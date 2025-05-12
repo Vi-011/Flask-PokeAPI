@@ -14,8 +14,8 @@
       <h1>Studio Ghilbi Films</h1>
       <div class="card-container">
         <!-- Loop through each Pokémon and wrap each card in a link -->
-        {% for pokemon in pokemons %}
-        <a
+        {% for thing in species %}
+        <a 
           href="{{ url_for('pokemon_detail', id=pokemon.id) }}"
           class="card-link"
         >
