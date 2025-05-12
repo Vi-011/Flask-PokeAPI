@@ -35,7 +35,7 @@ def index():
 @app.route("/pokemon/<int:id>")
 def pokemon_detail(id):
     # Get detailed info for the Pokémon using its id
-    response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{id}")
+    response = requests.get(f"https://ghibliapi.vercel.app/species{id}")
     data = response.json()
     
     # Extract extra details like types, height, and weight
