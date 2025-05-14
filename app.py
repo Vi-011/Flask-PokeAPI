@@ -79,7 +79,7 @@ def species_detail(id):
     return render_template("species.html", species={
         'name': name,
         'image': image_url,
-        'id': id,
+        'id': id,       
         'types': types,
     })
 
