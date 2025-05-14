@@ -33,7 +33,11 @@ def index():
       "https://ghibliapi.vercel.app/films/0440483e-ca0e-4120-8c50-4c8cd9b965d6"
     ]
   }]
-    return my_dict
+    
+
+    return render_template("index.html", thing_species = thing_species)
+if __name__ == '__main__':
+    app.run(debug=True)
     
 
 response = requests.get("https://ghibliapi.vercel.app/species")
