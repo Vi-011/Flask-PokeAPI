@@ -13,34 +13,29 @@ print(species_lists)
 def index(): 
     
   response = requests.get("https://ghibliapi.vercel.app/species")
+  data = response.json()
   species_lists = response.json()
   print(species_lists)
 
-  
-  data = response.json()
 
     
   species_lists = []
       
   for thing in species_lists:
-      movie = image_url 
-      url = thing['url']
-      parts = url.strip("/").split("/")
-      id = parts[-1]
-      classification = thing[classification]
-          
+    movie = 'image_url' 
+    url = thing['url']
+    parts = url.strip("/").split("/")
+    id = parts[-1]
+    classification = thing['classification']
+
+    species_lists.append({
+        'name': species_lists['name'].capitalize(), 
+        'movie': movie,
+        'id': id,
+        'classification': classification
+    })
       
-      image_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png"
-          
-      species_lists.append({
-          'name': species_lists['name'].capitalize(),
-          'movie': movie,
-          'id': id,
-          'image': image_url,
-          'classification': classification
-          })
-      
-      return render_template("index.html", species=species)
+    return render_template("index.html", species=species_lists)
 
 @app.route("/species/<int:id>")
 def species_detail(id):
@@ -50,14 +45,12 @@ def species_detail(id):
       
     types = [t['type']['name'] for t in data['types']]
     name = data.get('name').capitalize()
-    image_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png"
-      
 
     return render_template("species.html", species={
         'name': name,
-        'image': image_url,
         'id': id,       
-        'types': types,
+        'movie': movie,
+        'classification': classification
       })
 
 if __name__ == '__main__':
