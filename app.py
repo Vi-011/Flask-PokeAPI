@@ -14,7 +14,7 @@ def index():
         id = url.strip("/").split("/")[-1]
         classification = thing.get('classification', 'Unknown')
         name = thing.get('name', 'Unknown').capitalize()
-        image = "https://via.placeholder.com/150"
+        image = "https://banner2.cleanpng.com/20240413/qx/transparent-studio-ghibli-japanese-animation-hayao-miyazaki-my-character-from-my-neighbor-totoro-in-rain661ac59024a6e5.48137208.webp"
 
         species_lists.append({
             'name': name,
