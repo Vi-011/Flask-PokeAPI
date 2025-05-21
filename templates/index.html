@@ -8,6 +8,7 @@
   <body>
     <div class="container">
       <h1>Studio Ghibli Films</h1>
+      <img src="/https://static.wikia.nocookie.net/studio-ghibli/images/b/b4/Jiji.jpg/revision/latest?cb=20210218143145/603428ba-8a86-4b0b-a9f1-65df6abef3d3.jpg" alt="Cat"> 
       <div class="card-container">
         {% for thing in species %}
         <a href="{{ url_for('species_detail', id=thing.id) }}" class="card-link">
