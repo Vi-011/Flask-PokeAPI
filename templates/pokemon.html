@@ -5,7 +5,7 @@
     <title>{{ species.name }} Details</title>
     <link
       rel="stylesheet"
-      href="https://kleki.com/"
+      href="{{ url_for('static', filename='style.css') }}"
     />
   </head>
   <body>
@@ -13,10 +13,6 @@
       <h1>{{ species.name }} Details</h1>
       <div class="species-detail">
         <img src="{{ species.image }}" alt="{{ species.name }}" />
-        <p><strong>ID:</strong> {{ pokemon.id }}</p>
-        <p><strong>Types:</strong> {{ pokemon.types | join(', ') }}</p>
-        <p><strong>Height:</strong> {{ pokemon.height }}</p>
-        <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
       </div>
       <!-- Chart container -->
       <div class="pokemon-stats">

@@ -8,6 +8,7 @@ def index():
     response = requests.get("https://ghibliapi.vercel.app/species")
     species_data = response.json()
 
+
     species_lists = []
     for thing in species_data:
         url = thing['url']
