@@ -1,30 +1,44 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 import requests
 
 app = Flask(__name__)
 
 @app.route("/")
-def index(): 
+def index():
     response = requests.get("https://ghibliapi.vercel.app/species")
     species_data = response.json()
 
+    # Manual image mapping (we’ll fill values inside the route)
+    image_map = {
+        "Human": "images/Human.gif",
+        "Cat": "images/cat.webp",
+        "Spirit": "images/spirit.jpg",
+        "God": "images/god.webp",
+        "Totoro": "images/totoro.webp",
+        "Dragon": "images/dragon.jpg",
+        "Deer": "images/deer.webp",
+    }
 
     species_lists = []
     for thing in species_data:
         url = thing['url']
         id = url.strip("/").split("/")[-1]
-        classification = thing.get('classification', 'Unknown')
         name = thing.get('name', 'Unknown').capitalize()
-        image = "https://banner2.cleanpng.com/20240413/qx/transparent-studio-ghibli-japanese-animation-hayao-miyazaki-my-character-from-my-neighbor-totoro-in-rain661ac59024a6e5.48137208.webp"
+        classification = thing.get('classification', 'Unknown')
+
+        # Get image path or fallback
+        image_filename = image_map.get(name, "images/placeholder.jpg")
+        image_url = url_for('static', filename=image_filename)
 
         species_lists.append({
             'name': name,
             'id': id,
             'classification': classification,
-            'image': image
+            'image': image_url
         })
 
     return render_template("index.html", species=species_lists)
+
 
 @app.route("/species/<string:id>")
 def species_detail(id):
@@ -33,14 +47,27 @@ def species_detail(id):
 
     name = data.get('name', 'Unknown').capitalize()
     classification = data.get('classification', 'Unknown')
-    image = "https://via.placeholder.com/150"
+
+    image_map = {
+        "Human": "images/Human.gif",
+        "Cat": "images/cat.webp",
+        "Spirit": "images/spirit.jpg",
+        "God": "images/god.webp",
+        "Totoro": "images/totoro.webp",
+        "Dragon": "images/dragon.jpg",
+        "Deer": "images/deer.webp"
+    }
+
+    image_filename = image_map.get(name, "images/placeholder.jpg")
+    image_url = url_for('static', filename=image_filename)
 
     return render_template("species.html", species={
         'name': name,
         'id': id,
         'classification': classification,
-        'image': image
+        'image': image_url
     })
+
 
 if __name__ == '__main__':
     app.run(debug=True)
