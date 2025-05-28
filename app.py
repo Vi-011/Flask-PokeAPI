@@ -8,7 +8,6 @@ def index():
     response = requests.get("https://ghibliapi.vercel.app/species")
     species_data = response.json()
 
-    # Manual image mapping (we’ll fill values inside the route)
     image_map = {
         "Human": "images/Human.gif",
         "Cat": "images/cat.webp",
