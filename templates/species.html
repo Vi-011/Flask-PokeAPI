@@ -1,20 +1,53 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>{{ species.name }} Details</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='style.css') }}"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h1>{{ species.name }} Details</h1>
-      
-      <p><a href="{{ url_for('index') }}">Back to Main Page</a></p>
-    </div>
+<html lang="en">
+<head>
+   <title>{{ species.name }} Details</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+   <div class="container">
+       <header>
+           <h1>{{ species.name }} Details</h1>
+           <a href="{{ url_for('index') }}" class="back-link">← Back to Species List</a>
+       </header>
 
-    </script>
-  </body>
+
+       <section class="species-info">
+           <img src="{{ species.image }}" alt="{{ species.name }}" class="species-image">
+           <div class="species-details">
+               <p><strong>Classification:</strong> {{ species.classification }}</p>
+               <p><strong>Eye Colors:</strong> {{ species.eye_colors }}</p>
+               <p><strong>Hair Colors:</strong> {{ species.hair_colors }}</p>
+           </div>
+       </section>
+
+
+       <section class="films">
+           <h2>Featured Films</h2>
+           {% if species.films %}
+               <ul>
+                   {% for film in species.films %}
+                       <li>{{ film }}</li>
+                   {% endfor %}
+               </ul>
+           {% else %}
+               <p>No films found.</p>
+           {% endif %}
+       </section>
+
+
+       <section class="people">
+           <h2>Associated People</h2>
+           {% if species.people %}
+               <ul>
+                   {% for person in species.people %}
+                       <li>{{ person }}</li>
+                   {% endfor %}
+               </ul>
+           {% else %}
+               <p>No people found.</p>
+           {% endif %}
+       </section>
+   </div>
+</body>
 </html>

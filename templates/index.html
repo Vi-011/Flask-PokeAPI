@@ -1,27 +1,24 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Studio Ghibli Films</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Studio Ghibli Films</h1>
-     
-      <div class="card-container">
-        {% for thing in species %}
-        <a href="{{ url_for('species_detail', id=thing.id) }}" class="card-link">
-          <div class="card">
-            <img src="{{ thing.image }}" alt="{{ thing.name }}" />
-            <div class="card-body">
-              <h5 class="card-title">{{ thing.name }}</h5>
-              <p class="card-text">ID: {{ thing.id }}</p>
-            </div>
-          </div>
-        </a>
-        {% endfor %}
-      </div>
-    </div>
-  </body>
+ <head>
+   <title>Ghibli Species</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+ </head>
+ <body>
+   <div class="container">
+     <h1>Studio Ghibli Species</h1>
+     <div class="card-container">
+       {% for s in species %}
+       <a href="{{ url_for('species_detail', id=s.id) }}" class="card-link">
+         <div class="card">
+           <img src="{{ s.image }}" alt="{{ s.name }}" />
+           <div class="card-body">
+             <h5 class="card-title">{{ s.name }}</h5>
+             <p class="card-text">Classification: {{ s.classification }}</p>
+           </div>
+         </div>
+       </a>
+       {% endfor %}
+     </div>
+   </div>
+ </body>
 </html>

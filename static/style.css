@@ -1,41 +1,52 @@
-/* General page styling */
+
+
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
   background-color: #d4e1ff;
   margin: 0;
   padding: 0;
-}
-
-/* Container styling */
-.container {
+ }
+ 
+ 
+ 
+ 
+ .container {
   width: 90%;
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-}
-
-/* Title styling */
-h1 {
+ }
+ 
+ 
+ 
+ 
+ h1 {
   text-align: center;
   margin-bottom: 40px;
-}
-
-/* Card container styling */
-.card-container {
+ }
+ 
+ 
+ 
+ 
+ .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 150px;
   justify-content: center;
-}
-
-/* Remove link default styles */
-.card-link {
+ }
+ 
+ 
+ 
+ 
+ .card-link {
   text-decoration: none;
   color: inherit;
-}
-
-/* Individual card styling */
-.card {
+ }
+ 
+ 
+ 
+ 
+ .card {
   background-color: #ffffff;
   border: 3px solid #ffffff;
   border-radius: 8px;
@@ -45,60 +56,73 @@ h1 {
   text-align: center;
   box-shadow: 0 2px 5px rgba(104, 114, 226, 0.781);
   transition: transform 0.2s;
-}
-
-/* Hover effect for cards */
-.card:hover {
+ }
+ 
+ 
+ 
+ 
+ .card:hover {
   transform: scale(0.7);
-}
-
-/* Card image styling */
-.card img {
+ }
+ 
+ 
+ 
+ 
+ .card img {
   width: 100%;
   height: auto;
-}
-
-/* Card body styling */
-.card-body {
+ }
+ 
+ 
+ 
+ 
+ .card-body {
   padding: 15px;
-}
-
-/* Card title styling */
-.card-title {
+ }
+ 
+ 
+ 
+ 
+ .card-title {
   font-size: 1.2em;
   margin: 0;
-}
-
-/* Card text styling */
-.card-text {
+ }
+ 
+ 
+ 
+ 
+ .card-text {
   color: #ffffff;
   margin-top: 5px;
-}
-
-
-.species-detail {
+ }
+ 
+ 
+ 
+ 
+ .species-detail {
   text-align: center;
-}
-
-.species-detail img {
+ }
+ 
+ 
+ .species-detail img {
   width: 200px;
   height: auto;
   margin-bottom: 20px;
-}
-
-.species-detail p {
+ }
+ 
+ 
+ .species-detail p {
   font-size: 1.1em;
-}
-
-/* Chart container styling */
-.species-stats {
-  width: 100%;
-  max-width: 600px;
-  margin: 40px auto;
-}
-
-.card img {
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
-}
+ }
+ 
