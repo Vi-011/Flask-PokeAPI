@@ -6,45 +6,31 @@ body {
   margin: 0;
   padding: 0;
  }
- 
- 
- 
- 
+
  .container {
   width: 90%;
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
  }
- 
- 
- 
- 
+
  h1 {
   text-align: center;
   margin-bottom: 40px;
  }
- 
- 
- 
- 
+
  .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 150px;
   justify-content: center;
  }
- 
- 
- 
- 
+
  .card-link {
   text-decoration: none;
   color: inherit;
  }
- 
- 
- 
+
  
  .card {
   background-color: #ffffff;
@@ -58,71 +44,48 @@ body {
   transition: transform 0.2s;
  }
  
- 
- 
- 
  .card:hover {
   transform: scale(0.7);
  }
- 
- 
- 
  
  .card img {
   width: 100%;
   height: auto;
  }
  
- 
- 
- 
+
  .card-body {
   padding: 15px;
  }
- 
- 
- 
- 
- .card-title {
+.card-title {
   font-size: 1.2em;
   margin: 0;
  }
  
- 
- 
- 
+
  .card-text {
   color: #ffffff;
   margin-top: 5px;
  }
  
- 
- 
- 
  .species-detail {
   text-align: center;
  }
- 
- 
+
  .species-detail img {
   width: 200px;
   height: auto;
   margin-bottom: 20px;
  }
- 
- 
+
  .species-detail p {
   font-size: 1.1em;
  }
- 
- 
- 
- 
- 
  
  .card img {
   width: 100%;
   height: 150px;
   object-fit: cover;
  }
+ 
  
